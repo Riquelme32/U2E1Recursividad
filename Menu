@@ -1,0 +1,77 @@
+package unidad2menu;
+
+import java.util.Scanner;
+import unidad2menu.Metodos;
+import static unidad2menu.Metodos.isPalindrome;
+
+public class Menu 
+{
+
+    public static void main(String[] args)
+    {
+        Metodos metodo=new Metodos(); //CREAR UN OBJETO DE LA CLASE METODOS EN MAIN PARA PODER LLAMAR METODOS
+        Scanner leer=new Scanner (System.in);
+        
+        int opc2,opc1;
+        do
+          { 
+          
+                 opc2 =1; //PARA LEER LA ULTIMA OPCION
+                 System.out.println("ELIGE OPCIONES");
+                 System.out.println("1. SERIE FIBONACCI");
+                 System.out.println("2. PRESENTAR NUMEROS DEL 1 AL 10");
+                 System.out.println("3. FACTORAL");
+                 System.out.println("4. DESAPARECE NUMEROS");
+                 System.out.println("5. PALINDROMOS");
+                 System.out.println("6. SALIR");
+          
+                 opc1 = leer.nextInt(); //lee la opcion 1
+              
+           switch (opc1) //CASOS QUE VAN A MANDAR A LLAMAR A LOS METODOS
+           {
+             
+               case 1:
+                 
+                     System.out.println("LA SUCESION FIBONACCI ES: "
+                     +metodo.fibonacciRecursivo(8)); //LLAMAR AL METODO PARA IMPRIMIR EL RESULTADO
+                     break;
+                   
+               case 2:
+                      metodo.NumerosRecursivos(10,0);
+                      break;
+                  
+               case 3:
+                   
+                     System.out.println("EL FACTORIAL ES: "+"["+metodo.factorialRecursivo(10)+"]");
+                     break;
+                   
+               case 4:
+                   metodo.DesapareceRecursivo(10);
+                   break;
+                   
+               case 5:
+                     boolean valor = isPalindrome("conocer");
+                     if(valor==true)
+                     {
+                     System.out.println ("si es un palindromo");
+                     }else{
+                     System.out.println ("no es un palindromo");
+                     }
+                     break;
+                   
+               case 6:
+                   
+                     System.out.println("SALIR");
+                     break;
+                     default:
+                  
+            } if (opc1!=6) 
+                 {
+                  System.out.println("\nDesea continuar (0) SI - (1) NO");
+                  opc2 = leer.nextInt();  
+                 }
+            
+             }  while (opc2 !=1); 
+ }
+
+ }
