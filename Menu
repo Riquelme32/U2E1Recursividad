@@ -4,7 +4,7 @@ import java.util.Scanner;
 import unidad2menu.Metodos;
 import static unidad2menu.Metodos.isPalindrome;
 
-public class Menu 
+public class Menu    //LOS VALORES SE INGRESAN DESDE EL CODIGO 
 {
 
     public static void main(String[] args)
