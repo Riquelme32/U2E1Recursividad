@@ -1,0 +1,69 @@
+
+package unidad2menu;
+
+
+public class Metodos 
+{
+    
+      //METODO RECURSIVO PARA LA SUCECION FIBONACCI
+     public int fibonacciRecursivo (int n)
+     {
+        if (n==1 || n==2)
+        {
+        return 1;
+        }
+        else{ 
+            return fibonacciRecursivo (n-1) + fibonacciRecursivo (n-2);
+        }
+        
+     }
+
+    //METODO RECURSIVO DE NUMEROS X 
+    public void NumerosRecursivos (int i,int j) 
+     {
+        if (j<=i)
+        {
+            System.out.print(" "+j+" ");
+            NumerosRecursivos (i,j+1);
+        }
+        
+     }
+        
+    //METODO RECURSIVO DE FACTORIAL DE UN NUMERO X
+     public static int factorialRecursivo(int numero)
+     {
+         int res;
+         
+         if(numero==1){  
+         return 1; //Se termina la recursión
+        }else
+        {   
+         res = numero * factorialRecursivo(numero-1); //Se llama asi misma la funcion, con el valor del numero menos 1
+        }   
+        return res; //Devolvemos el valor
+         
+     }
+     
+      //METODO RECURSIVO DE UN NUMERO X QUE VAYA QUITANDO UNO A UNO 
+      public void DesapareceRecursivo (int n)
+     {
+         if (n>-1)
+         {
+         for (int i=0;i<=n;i++)
+         {
+         System.out.print(" "+i+" ");
+         }
+         System.out.println("");
+         DesapareceRecursivo (n - 1);
+         }
+     }
+    
+      //METODO RECURSIVO PALINDROMO PARA PALABRAS
+     public static boolean isPalindrome(String s)
+     {
+         int n = s.length();
+         for (int i = 0; i < n/2; i++)
+         if (s.charAt(i) != s.charAt(n-1-i))
+         return false;
+         return true;
+     }
